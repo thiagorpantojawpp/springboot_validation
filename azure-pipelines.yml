@@ -7,7 +7,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 repository:
-  name: 'seu-repositorio-git'
+  name: 'springboot_validation'
   ref: 'refs/heads/main' # Especifique o branch apropriado
 
 steps:
