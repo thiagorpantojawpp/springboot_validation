@@ -8,10 +8,10 @@ pool:
 
 repository:
   name: 'seu-repositorio-git'
-  ref: 'refs/heads/master' # Especifique o branch apropriado
+  ref: 'refs/heads/main' # Especifique o branch apropriado
 
 steps:
-- script: |
+- script: ./mvnw clean package
     # Comando para compilar a aplicação Spring Boot (exemplo)
     ./mvnw clean package
   displayName: 'Compilar a aplicação'
