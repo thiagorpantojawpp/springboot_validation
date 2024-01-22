@@ -1,0 +1,28 @@
+# Arquivo azure-pipelines.yml
+
+trigger:
+- '*'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+repository:
+  name: 'seu-repositorio-git'
+  ref: 'refs/heads/master' # Especifique o branch apropriado
+
+steps:
+- script: |
+    # Comando para compilar a aplicação Spring Boot (exemplo)
+    ./mvnw clean package
+  displayName: 'Compilar a aplicação'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publicar Artefatos de Build'
+  inputs:
+    pathtoPublish: 'target'
+    artifactName: 'drop'
+
+- script: |
+    # Comando para implantar a aplicação em um servidor (exemplo)
+    # Substitua com seus comandos de implantação específicos
+  displayName: 'Implantar a aplicação'
